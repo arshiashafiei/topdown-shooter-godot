@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjbrcnqgfes82"]
+
+[ext_resource type="Texture2D" uid="uid://eqwkhkim4wd0" path="res://graphics/objects/electric_box.png" id="1_6h52a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7hj4l"]
+size = Vector2(152, 112)
+
+[node name="ElectricBox" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 11
+
+[node name="ElectricBoxImage" type="Sprite2D" parent="."]
+scale = Vector2(0.430282, 0.441571)
+texture = ExtResource("1_6h52a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7hj4l")
