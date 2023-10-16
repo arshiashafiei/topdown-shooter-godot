@@ -3,9 +3,10 @@ extends CharacterBody2D
 signal laser_shot(pos: Vector2, direction: Vector2)
 signal gernade_thrown(pos: Vector2, direction: Vector2)
 
-@export var player_speed: int = 700
+@export var max_player_speed: int = 700
 var can_shoot_laser: bool = true
 var can_shoot_gernade: bool = true
+var player_speed: int = max_player_speed
 
 
 func _process(_delta):

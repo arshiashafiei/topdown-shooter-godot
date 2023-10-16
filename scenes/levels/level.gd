@@ -5,9 +5,9 @@ var laser_scene: PackedScene = preload("res://scenes/projectiles/laser.tscn")
 var gernade_scene: PackedScene = preload("res://scenes/projectiles/gernade.tscn")
 
 
-func _on_gate_player_entered_gate(body):
-	print("player entered the gate!")
-	print(body)
+func _on_gate_player_entered_gate(_body):
+	var tween: Tween = create_tween()
+	tween.tween_property($Player, "player_speed", 0, 0.2)
 
 
 func _on_player_laser_shot(pos: Vector2, direction: Vector2):
