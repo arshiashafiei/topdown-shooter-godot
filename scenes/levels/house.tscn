@@ -1,10 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://dvsfsd1pd1tiv"]
 
 [ext_resource type="Texture2D" uid="uid://dpwp0xh6ergbs" path="res://graphics/tilesets/interior.png" id="1_qluk0"]
+[ext_resource type="Script" path="res://scenes/levels/house.gd" id="1_qsu7y"]
 [ext_resource type="PackedScene" uid="uid://dqmywfspy2gls" path="res://scenes/objects/simple_light.tscn" id="2_53yq7"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7fg6v"]
-size = Vector2(664, 490)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rq1tl"]
 resource_name = "Floor"
@@ -191,10 +189,10 @@ sources/2 = SubResource("TileSetAtlasSource_tsjv0")
 
 [node name="House" type="Area2D"]
 collision_layer = 4
+script = ExtResource("1_qsu7y")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(790, 1189)
-shape = SubResource("RectangleShape2D_7fg6v")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-2600, -428, -2600, 388, -2562, 554, -2472, 644, -2374, 674, -1535, 667, -1467, 712, -1422, 788, -1437, 1226, -1377, 1354, -1301, 1422, -1196, 1430, 390, 1430, 1636, 1430, 1749, 1392, 1795, 1309, 1832, 1211, 1840, -458, 1772, -564, 1644, -639, -2389, -647, -2487, -609, -2555, -541)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_2hjfh")
@@ -225,3 +223,6 @@ rotation = -1.5708
 
 [node name="SimpleLight3" parent="." instance=ExtResource("2_53yq7")]
 position = Vector2(797, 619)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
