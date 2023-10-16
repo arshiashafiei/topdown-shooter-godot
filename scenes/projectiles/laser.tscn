@@ -27,7 +27,7 @@ height = 162.0
 
 [node name="Laser" type="Area2D"]
 collision_layer = 8
-collision_mask = 19
+collision_mask = 26
 script = ExtResource("1_4udot")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
@@ -43,3 +43,5 @@ texture = ExtResource("1_ug677")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_hjl3c")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

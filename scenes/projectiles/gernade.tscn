@@ -189,7 +189,7 @@ _data = {
 
 [node name="Gernade" type="RigidBody2D"]
 collision_layer = 8
-collision_mask = 27
+collision_mask = 26
 gravity_scale = 0.0
 script = ExtResource("1_hua1y")
 
