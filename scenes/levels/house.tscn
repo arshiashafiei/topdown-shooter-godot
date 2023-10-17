@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dvsfsd1pd1tiv"]
+[gd_scene load_steps=9 format=3 uid="uid://dvsfsd1pd1tiv"]
 
 [ext_resource type="Texture2D" uid="uid://dpwp0xh6ergbs" path="res://graphics/tilesets/interior.png" id="1_qluk0"]
 [ext_resource type="Script" path="res://scenes/levels/house.gd" id="1_qsu7y"]
 [ext_resource type="PackedScene" uid="uid://dqmywfspy2gls" path="res://scenes/objects/simple_light.tscn" id="2_53yq7"]
+[ext_resource type="PackedScene" uid="uid://dq65u22wsl5e2" path="res://scenes/objects/wall_lamp.tscn" id="4_1i1xv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rq1tl"]
 resource_name = "Floor"
@@ -215,7 +216,7 @@ layer_2/z_index = 0
 layer_2/tile_data = PackedInt32Array(262141, 262145, 0, 262142, 262145, 0, 262143, 262145, 0, 196608, 262145, 0, 196611, 262145, 0, 196612, 327681, 2, 4, 327681, 1, 65540, 327681, 1, 131076, 327681, 1, -65532, 327681, 1, -65542, 262145, 0, -65541, 262145, 0, -65540, 262145, 0, -65539, 262145, 0, -65538, 262145, 0, -65537, 262145, 0, -131072, 262145, 0, -131071, 262145, 0, -131070, 262145, 0, -131069, 262145, 0, -131068, 327681, 0, -7, 196609, 1, 65529, 196609, 1, 131065, 196609, 2, 131067, 262145, 0, -65543, 196609, 0, 131066, 262145, 2, 131068, 327681, 0, 196604, 327681, 1, 262140, 196609, 2)
 
 [node name="SimpleLight" parent="." instance=ExtResource("2_53yq7")]
-position = Vector2(4, -492)
+position = Vector2(958, -490)
 
 [node name="SimpleLight2" parent="." instance=ExtResource("2_53yq7")]
 position = Vector2(-1281, 966)
@@ -223,6 +224,14 @@ rotation = -1.5708
 
 [node name="SimpleLight3" parent="." instance=ExtResource("2_53yq7")]
 position = Vector2(797, 619)
+
+[node name="WallLamp" parent="." instance=ExtResource("4_1i1xv")]
+position = Vector2(-1407, -541)
+rotation = 3.14159
+
+[node name="WallLamp2" parent="." instance=ExtResource("4_1i1xv")]
+position = Vector2(-499, 1336)
+rotation = -0.00716984
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
