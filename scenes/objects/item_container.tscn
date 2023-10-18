@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dl7b1hqxofd1p"]
+
+[ext_resource type="Script" path="res://scenes/objects/item_container.gd" id="1_t5jpk"]
+
+[node name="ItemContainer" type="StaticBody2D"]
+script = ExtResource("1_t5jpk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-3, 2, -3, -2, 3, -2, 3, 2)
