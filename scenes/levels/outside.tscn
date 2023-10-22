@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dmvlw4n0plcln"]
+[gd_scene load_steps=26 format=3 uid="uid://dmvlw4n0plcln"]
 
 [ext_resource type="PackedScene" uid="uid://cncfaomeruxa1" path="res://scenes/levels/level.tscn" id="1_s3nh5"]
 [ext_resource type="Script" path="res://scenes/levels/outside.gd" id="2_i52iy"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://dvsfsd1pd1tiv" path="res://scenes/levels/house.tscn" id="7_6p4aw"]
 [ext_resource type="PackedScene" uid="uid://dvmh5603cv7gc" path="res://scenes/objects/gate.tscn" id="8_lwcnl"]
 [ext_resource type="PackedScene" uid="uid://cbx6hakeai0e0" path="res://scenes/enemies/drone.tscn" id="9_ba7aj"]
+[ext_resource type="PackedScene" uid="uid://cls2gqgu14twf" path="res://scenes/objects/box.tscn" id="10_yk85d"]
+[ext_resource type="PackedScene" uid="uid://b01vdog7ayll1" path="res://scenes/objects/toilet.tscn" id="11_xwaku"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2y8pb"]
 resource_name = "Stones"
@@ -211,6 +213,12 @@ rotation = -3.2306
 
 [node name="Drone" parent="." index="3" instance=ExtResource("9_ba7aj")]
 position = Vector2(-313, 912)
+
+[node name="Box" parent="." index="6" instance=ExtResource("10_yk85d")]
+position = Vector2(930, 911)
+
+[node name="Toilet" parent="." index="7" instance=ExtResource("11_xwaku")]
+position = Vector2(890, 528)
 
 [connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
 [connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]

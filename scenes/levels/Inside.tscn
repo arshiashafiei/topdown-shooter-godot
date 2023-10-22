@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://bv2k7cskluyk7"]
+[gd_scene load_steps=4 format=3 uid="uid://bv2k7cskluyk7"]
 
 [ext_resource type="PackedScene" uid="uid://cncfaomeruxa1" path="res://scenes/levels/level.tscn" id="1_c0eum"]
 [ext_resource type="Script" path="res://scenes/levels/Inside.gd" id="2_uns6w"]
+[ext_resource type="TileSet" uid="uid://c3q64cvxtxaot" path="res://scenes/levels/house.tres" id="3_ust0m"]
 
 [node name="Inside" instance=ExtResource("1_c0eum")]
 script = ExtResource("2_uns6w")
+
+[node name="TileMap" type="TileMap" parent="Ground" index="0"]
+tile_set = ExtResource("3_ust0m")
+format = 2

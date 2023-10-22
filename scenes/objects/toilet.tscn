@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://b01vdog7ayll1"]
+[gd_scene load_steps=5 format=3 uid="uid://b01vdog7ayll1"]
 
 [ext_resource type="PackedScene" uid="uid://dl7b1hqxofd1p" path="res://scenes/objects/item_container.tscn" id="1_t1m4d"]
 [ext_resource type="Script" path="res://scenes/objects/toilet.gd" id="2_53cny"]
 [ext_resource type="Texture2D" uid="uid://22unomxbb4rp" path="res://graphics/objects/toilet.png" id="2_82ty3"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_t13yb"]
+polygon = PackedVector2Array(-91, -122, 90, -123, 95, -115, 110, -113, 117, -99, 119, -76, 112, -63, 100, -56, 94, -60, 101, -41, 102, -13, 100, 9, 89, 38, 77, 61, 44, 104, 21, 120, 0, 127, -25, 116, -44, 102, -80, 56, -93, 30, -101, 1, -99, -42, -92, -54, -107, -59, -119, -70, -116, -105)
 
 [node name="Toilet" instance=ExtResource("1_t1m4d")]
 script = ExtResource("2_53cny")
@@ -12,3 +15,6 @@ texture = ExtResource("2_82ty3")
 
 [node name="CollisionPolygon2D" parent="." index="1"]
 polygon = PackedVector2Array(-88, -120, 91, -123, 95, -115, 109, -113, 117, -100, 118, -75, 112, -62, 100, -57, 94, -59, 101, -41, 102, -15, 99, 10, 89, 38, 77, 61, 62, 82, 43, 104, 20, 121, 0, 127, -20, 119, -42, 104, -59, 84, -80, 56, -92, 27, -102, 0, -100, -25, -98, -40, -93, -54, -107, -58, -116, -69, -116, -98, -101, -114)
+
+[node name="LightOccluder2D" parent="." index="2"]
+occluder = SubResource("OccluderPolygon2D_t13yb")
